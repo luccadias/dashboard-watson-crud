@@ -27,7 +27,7 @@ export default class Assistant extends Component {
   getListIntents() {
     if (this.state.workspace_id !== undefined && this.state.workspace_id !== '') {
       listIntents(this.state.workspace_id).then(response => {
-        this.setState({ intents: response.intents })
+        this.setState({ intents: response.data.intents })
         this.getListEntities()
       })
     } else {
@@ -38,7 +38,7 @@ export default class Assistant extends Component {
   getListEntities() {
     listEntities(this.state.workspace_id).then(response => {
       console.log(response)
-      this.setState({ entities: response.entities })
+      this.setState({ entities: response.data.entities })
     })
   }
 
@@ -58,7 +58,7 @@ export default class Assistant extends Component {
                     <li class="collection-item avatar">
                       <i class="material-icons circle blue">folder</i>
                       <span class="title">{element.intent}</span>
-                      <p class="grey-text">{element.description}}</p>
+                      <p class="grey-text">{element.description}</p>
 
                     </li>
                   )

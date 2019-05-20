@@ -28,8 +28,9 @@ export default class Workspace extends Component {
     this.setState({ workspaces: [] })
     listWorkspace().then(response => {
       console.log(response)
-      this.setState({ showPage: true })
-      this.setState({ workspaces: response.workspaces })
+     
+      this.setState({ workspaces: response.data.workspaces })
+       this.setState({ showPage: true })
     }).catch(err => {
       
     })
