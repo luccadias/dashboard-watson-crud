@@ -75,3 +75,122 @@ code {
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating){
   color: #1E6AB2;
 }
+
+.btn-floating{
+  position: absolute;
+  right:30px;
+  bottom: 30px;
+}
+
+.chat-container{
+  width: 350px;
+  height: 100%;
+  z-index: 100;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: #343334;
+}
+
+.chat-navbar{
+  width: 100%;
+  height: 5%;
+  padding: 0 20px 0 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.chat-body{
+  width: 100%;
+  height: 85%;
+}
+.chat-input{
+  width: 100%;
+  height: 5%;
+  padding: 0 10px 0 10px;
+}
+
+.input{
+  width: 100%;
+  border-left: yellow 2px solid;
+  color: white;
+  padding: 15px;
+  height: auto;
+  margin: 3px;
+}
+
+.output{
+  width: 100%;
+  border-right: #1E6AB2 2px solid;
+  color: white;
+  padding: 15px;
+  height: auto;
+  text-align: right;
+}
+
+
+.slideInRight {
+  -webkit-animation-name: slideInRight;
+  animation-name: slideInRight;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  }
+
+
+  @-webkit-keyframes slideInRight {
+  0% {
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  visibility: visible;
+  }
+  100% {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  }
+  }
+  @keyframes slideInRight {
+  0% {
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  visibility: visible;
+  }
+  100% {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  }
+  } 
+
+
+  .slideOutRight {
+    -webkit-animation-name: slideOutRight;
+    animation-name: slideOutRight;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    }
+    @-webkit-keyframes slideOutRight {
+    0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    }
+    100% {
+    visibility: hidden;
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    }
+    }
+    @keyframes slideOutRight {
+    0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    }
+    100% {
+    visibility: hidden;
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    }
+    } 

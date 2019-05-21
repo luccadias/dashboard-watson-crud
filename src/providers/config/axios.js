@@ -2,7 +2,7 @@ import axios from 'axios';
 import { throwError } from 'rxjs';
 
 const PROD_URL = 'http//';
-const TEST_URL = 'http://localhost:6003';
+const TEST_URL = 'http://9.7.52.240:6003';
 
 const axiosProvider = axios.create({
   baseURL: TEST_URL

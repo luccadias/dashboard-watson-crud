@@ -27,14 +27,14 @@ export default class Workspace extends Component {
   getWorkspace() {
     this.setState({ workspaces: [] })
     listWorkspace().then(response => {
-      console.log(response)
-     
       this.setState({ workspaces: response.data.workspaces })
        this.setState({ showPage: true })
     }).catch(err => {
       
     })
   }
+
+ 
 
   render() {
     return (

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { listIntents } from '../providers/Intents';
 import { listEntities } from '../providers/EntitiesService';
 import { Redirect } from "react-router-dom";
-
+import Chat from './Chat'
 
 export default class Assistant extends Component {
 
@@ -15,7 +15,9 @@ export default class Assistant extends Component {
       workspace_id: params.get('id'),
       auth: false,
       intents: [],
-      entities: []
+      entities: [],
+      context: null,
+      showChat: false
     }
   }
 
@@ -47,6 +49,7 @@ export default class Assistant extends Component {
   render() {
     return (
       !this.state.auth ?
+      <>
         <div class="container">
           <div class="row">
             <div class="col s6">
@@ -73,15 +76,18 @@ export default class Assistant extends Component {
               <div class="collection">
                 {this.state.entities.map(element => {
                   return (
-                    <a href="#!" class="collection-item blue-text">@{element.entity}</a>
+                    <a  class="collection-item blue-text">@{element.entity}</a>
                   )
                 })}
 
               </div>
             </div>
           </div>
-
+          <a onClick={()=> this.setState({showChat: true})} class="btn-floating btn-large waves-effect waves-light blue"><i class="material-icons">chat</i></a>
+         
         </div>
+        <Chat show={this.state.showChat} />
+         </>
         :
         <Redirect push={true} to="/" />
     )
